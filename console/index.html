@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AWS 시뮬레이터 콘솔</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23232f3e'/%3E%3Cpath d='M6 20c5 4 15 4 20 0' stroke='%23ff9900' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3Ctext x='16' y='15' font-size='11' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='bold'%3Esim%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header id="topbar">
+  <a class="logo" href="#/">aws<span>sim</span></a>
+  <div class="search"><input id="svc-search" type="search" placeholder="서비스 검색 (예: EC2, S3, Lambda)…" autocomplete="off"><div id="svc-search-results" class="hidden"></div></div>
+  <div class="spacer"></div>
+  <a href="#/labs" class="topbtn">🎓 실습</a>
+  <a href="#/billing" class="topbtn">💵 요금</a>
+  <a href="#/history" class="topbtn">🕘 기록</a>
+  <select id="region-select" title="리전"></select>
+  <span class="account">sim-user @ <b id="account-id">123456789012</b></span>
+</header>
+<div id="layout">
+  <nav id="sidenav">
+    <div class="nav-title">서비스</div>
+    <a href="#/" data-svc="home">🏠 콘솔 홈</a>
+    <a href="#/iam" data-svc="iam"><i>IAM</i> 사용자 및 권한</a>
+    <a href="#/vpc" data-svc="vpc"><i>VPC</i> 네트워크</a>
+    <a href="#/ec2" data-svc="ec2"><i>EC2</i> 가상 서버</a>
+    <a href="#/s3" data-svc="s3"><i>S3</i> 객체 스토리지</a>
+    <a href="#/lambda" data-svc="lambda"><i>λ</i> Lambda 함수</a>
+    <a href="#/dynamodb" data-svc="dynamodb"><i>DDB</i> DynamoDB</a>
+    <a href="#/sqs" data-svc="sqs"><i>SQS</i> 메시지 대기열</a>
+    <a href="#/sns" data-svc="sns"><i>SNS</i> 알림 주제</a>
+    <a href="#/cloudwatch" data-svc="cloudwatch"><i>CW</i> CloudWatch</a>
+    <div class="nav-title">도구</div>
+    <a href="#/labs" data-svc="labs">🎓 실습 미션</a>
+    <a href="#/billing" data-svc="billing">💵 요금 추정</a>
+    <a href="#/history" data-svc="history">🕘 이벤트 기록</a>
+    <a href="#/api" data-svc="api">⌨️ API / CLI 도움말</a>
+    <div class="nav-foot"><button class="link danger" id="btn-reset">모든 리소스 초기화</button></div>
+  </nav>
+  <main id="content"></main>
+</div>
+<div id="toasts"></div>
+<div id="modal-root"></div>
+<script src="/app.js"></script>
+<script src="/services-a.js"></script>
+<script src="/services-b.js"></script>
+<script>App.start();</script>
+</body>
+</html>

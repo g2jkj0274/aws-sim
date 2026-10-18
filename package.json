@@ -1,0 +1,14 @@
+{
+  "name": "aws-sim",
+  "version": "1.0.0",
+  "description": "로컬에서 AWS 서비스를 흉내 내어 연습할 수 있는 시뮬레이터 (콘솔 + API + CLI + 실습 미션)",
+  "main": "server/index.js",
+  "bin": { "awsim": "cli/awsim.js" },
+  "scripts": {
+    "start": "node server/index.js",
+    "reset": "node server/index.js --reset",
+    "test": "node test/smoke.js",
+    "test:ui": "node test/ui.js"
+  },
+  "license": "MIT"
+}
